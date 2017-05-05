@@ -1,0 +1,43 @@
+section.page-title style="background-image:url(images/background/page-title-1.jpg);" 
+  .auto-container
+    h1 Our Cars
+    .bread-crumb-outer
+      ul.bread-crumb.clearfix
+        li
+          a href="index.html"  Home
+        li.active Our Cars
+
+      /! Sidebar
+section.about-us-section
+  .auto-container
+    .row.clearfix
+      /! Content Column
+      .column.content-column.pull-right.col-md-6.col-sm-6.col-xs-12
+        .inner-box
+
+          h2 
+          	|About -
+          	=@company.name
+          .text 
+          	=@company.description
+          table.table.bordered 
+          	tr
+          		td Address
+          		td=@company.address
+          	tr
+          		td phone
+          		td=@company.contact
+          	tr
+          		td City
+          		td=@company.city
+          	tr
+          		td Zipcode
+          		td=@company.zipcode
+          =link_to 'Register A Cab',new_company_cab_path(@company),class:"theme-btn btn-style-three"					
+      /! Map Column
+      .column.map-column.pull-left.col-md-6.col-sm-6.col-xs-12
+        .inner-box
+          figure.map-image
+          	=image_tag 'locations-map.png'
+            
+                

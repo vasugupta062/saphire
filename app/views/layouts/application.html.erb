@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saphire</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+  <style type="text/css">.fancybox-margin{margin-right:15px;}</style></head>
+
+</head>
+<body>
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader" style="display: none;"></div>
+	
+	<%=render partial: "shared/header"%>
+
+	<%= yield %>
+	<%=render partial: "shared/footer"%>
+	</div>
+</body>
+</html>

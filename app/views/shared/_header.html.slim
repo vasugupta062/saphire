@@ -1,0 +1,240 @@
+header.main-header.header-style-one.fixed-header
+  /! Header-Upper
+  .header-upper
+    .auto-container
+      .clearfix
+        .logo-outer
+          .logo
+            a href=root_path
+              h2 
+                span style="color:red" SAP
+                span color="black" HIRE 
+        .upper-right.clearfix
+          /! Info Box
+          .info-box
+            .icon-box
+              span.flaticon-buildings
+            ul
+              li
+                strong Visit Us:
+              li 123A, Mainbridge, USA
+          /! Info Box
+          .info-box
+            .icon-box
+              span.flaticon-technology-5
+            ul
+              li
+                strong Call Us:
+              li +1800 - 2374 - 1900
+          .info-box
+            .icon-box
+              span.flaticon-envelope
+            ul
+              li
+                strong Mail Us:
+              li valencia@support.com
+          .info-box.btn-box
+            a.theme-btn href="http://wp1.themexlab.com/2017/valencia/booking.html"  Bookings
+  /! Header-Lower
+  .header-lower
+    .auto-container
+      .nav-outer.clearfix
+        /! Main Menu
+        nav.main-menu
+          .navbar-header
+            /! Toggle Button
+            button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          .navbar-collapse.collapse.clearfix
+            ul.navigation.clearfix
+              li.current.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Home
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/index.html"  Homepage One
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/index-2.html"  Homepage Two
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/index-3.html"  Homepage Three
+                  li.dropdown
+                    a href="http://wp1.themexlab.com/2017/valencia/#"  Header Styles
+                    ul
+                      li
+                        a href="http://wp1.themexlab.com/2017/valencia/index.html"  Header Style One
+                      li
+                        a href="http://wp1.themexlab.com/2017/valencia/index-2.html"  Header Style Two
+                      li
+                        a href="http://wp1.themexlab.com/2017/valencia/index-3.html"  Header Style Three
+                    .dropdown-btn
+                      span.fa.fa-angle-down
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li
+                a href="http://wp1.themexlab.com/2017/valencia/about-us.html"  About Us
+              li
+                a href="http://wp1.themexlab.com/2017/valencia/services.html"  Services
+              li.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Our Cars
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/our-cars.html"  Our Cars
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/car-single.html"  Car Single
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/booking.html"  Book a Car
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/confirmation.html"  Confirmation
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Portfolio
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/gallery-three-column.html"  Gallery Three Column
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/gallery-masonry.html"  Gallery Masonry
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Blog
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/blog-grid.html"  Blog Grid View
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/blog-list.html"  Blog List View
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/blog-single.html"  Blog Details
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li 
+                a href="http://wp1.themexlab.com/2017/valencia/contact.html"  Contact
+              
+              -if current_user.blank?
+                li
+                  a href=new_user_session_path
+                    |Login  
+              -else  
+                li.dropdown
+                  =link_to destroy_user_session_path, method: :DELETE
+                    |Logout
+                  ul
+                    li
+                      =link_to  'Apply for transporter',apply_transporter_users_path
+                    -current_user.companies.each do |company|  
+                      li
+                        =link_to company.name, company_path(company)
+                    li
+                      a href="http://wp1.themexlab.com/2017/valencia/blog-single.html"  Blog Details
+                  .dropdown-btn
+                    span.fa.fa-angle-down         
+        /! Main Menu End
+        /! Social Links
+        .social-links
+          a href="http://wp1.themexlab.com/2017/valencia/#" 
+            span.fa.fa-facebook-f
+          a href="http://wp1.themexlab.com/2017/valencia/#" 
+            span.fa.fa-twitter
+          a href="http://wp1.themexlab.com/2017/valencia/#" 
+            span.fa.fa-google-plus
+          a href="http://wp1.themexlab.com/2017/valencia/#" 
+            span.fa.fa-linkedin
+          a href="http://wp1.themexlab.com/2017/valencia/#" 
+            span.fa.fa-instagram
+
+  /! Sticky Header
+  .sticky-header
+    .auto-container.clearfix
+      /! Logo
+      .logo.pull-left
+        a.img-responsive href="http://wp1.themexlab.com/2017/valencia/index.html" 
+          a href=root_path
+            h4 
+              span style="color:red" SAP
+              span color="black" HIRE 
+      /! Right Col
+      .right-col.pull-right
+        /! Main Menu
+        nav.main-menu
+          .navbar-header
+            /! Toggle Button
+            button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          .navbar-collapse.collapse.clearfix
+            ul.navigation.clearfix
+              li.current.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Home
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/index.html"  Homepage One
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/index-2.html"  Homepage Two
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/index-3.html"  Homepage Three
+                  li.dropdown
+                    a href="http://wp1.themexlab.com/2017/valencia/#"  Header Styles
+                    ul
+                      li
+                        a href="http://wp1.themexlab.com/2017/valencia/index.html"  Header Style One
+                      li
+                        a href="http://wp1.themexlab.com/2017/valencia/index-2.html"  Header Style Two
+                      li
+                        a href="http://wp1.themexlab.com/2017/valencia/index-3.html"  Header Style Three
+                    .dropdown-btn
+                      span.fa.fa-angle-down
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li
+                a href="http://wp1.themexlab.com/2017/valencia/about-us.html"  About Us
+              li
+                a href="http://wp1.themexlab.com/2017/valencia/services.html"  Services
+              li.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Our Cars
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/our-cars.html"  Our Cars
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/car-single.html"  Car Single
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/booking.html"  Book a Car
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/confirmation.html"  Confirmation
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Portfolio
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/gallery-three-column.html"  Gallery Three Column
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/gallery-masonry.html"  Gallery Masonry
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li.dropdown
+                a href="http://wp1.themexlab.com/2017/valencia/#"  Blog
+                ul
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/blog-grid.html"  Blog Grid View
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/blog-list.html"  Blog List View
+                  li
+                    a href="http://wp1.themexlab.com/2017/valencia/blog-single.html"  Blog Details
+                .dropdown-btn
+                  span.fa.fa-angle-down
+              li
+                a href="http://wp1.themexlab.com/2017/valencia/contact.html"  Contact
+              -if current_user.blank?
+                li
+                  a href=new_user_session_path
+                    |Login  
+              -else  
+                li
+                  =link_to destroy_user_session_path, method: :DELETE
+                    |Logout
+                          
+        /! Main Menu End
+  /! End Sticky Header
+/! End Main Header

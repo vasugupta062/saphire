@@ -1,0 +1,105 @@
+section.billing-section
+  .auto-container
+    .sec-title
+      h2 Billing Details
+    /! Billing Form
+    .billing-form.default-form
+      =form_for @cab,{:url=> ''} do |f|
+        /! Column
+        =f.hidden_field :company_id
+        .row.clearfix
+          .form-group.col-md-6.col-sm-12.col-xs-12
+            .field-label
+              | Company make
+              span.req *
+            =f.select :make_id ,options_for_select(['a','v'])  
+          .form-group.col-md-6.col-sm-12.col-xs-12
+              .field-label
+                | Model
+                span.req *
+              =f.select :model ,options_for_select(['a','v'])      
+          .form-group.col-md-6.col-sm-12.col-xs-12
+              .field-label
+                | Cab Type 
+                span.req *
+              =f.select :cab_type ,options_for_select(['a','v'])          
+          .form-group.col-md-6.col-sm-12.col-xs-12
+            .field-label
+              | Year
+              span.req *
+            .field-inner
+              =f.text_field  :year , placeholder:"enter company name.."
+          .form-group.col-md-6.col-sm-12.col-xs-12
+            .field-label
+              | Seat
+              span.req *
+            .field-inner
+              =f.text_field  :seat , placeholder:"enter company name.."   
+          .form-group.col-md-6.col-sm-12.col-xs-12
+              .field-label
+                | Cab Type 
+                span.req *
+              =f.select :comfirt_id ,options_for_select(['a','v'])          
+          / .form-group.col-md-6.col-sm-12.col-xs-12
+          /   .field-label
+          /     | Pickup Date
+          /     span.req *
+          /   .field-inner
+          /     input#field-one.datepicker.hasDatepicker name="field-name" placeholder=("Select the Start Date") type="text" value="" /
+          /     label.input-icon for="field-one" 
+          /       span.fa.fa-calendar
+          / .form-group.col-md-6.col-sm-12.col-xs-12
+          /   .field-label
+          /     | Drop off Date
+          /     span.req *
+          /   .field-inner
+          /     input#field-two.datepicker.hasDatepicker name="field-name" placeholder=("Select the End Date") type="text" value="" /
+          /     label.input-icon for="field-one" 
+          /       span.fa.fa-calendar
+          / .form-group.col-md-6.col-sm-12.col-xs-12
+          /   .field-label
+          /     | Select the Timings
+          /     span.req *
+          /   .field-inner
+          /     input#field-three name="field-name" placeholder=("Select the Timings") type="text" value="" /
+          /     label.input-icon for="field-three" 
+          /       span.fa.fa-clock-o
+          / .form-group.col-md-6.col-sm-12.col-xs-12
+          /   .field-label
+          /     | No of Passengers
+          /     span.req *
+          /   select name="passengers" 
+          /     option Passengers
+          /     option 1
+          /     option 2
+          /     option 3
+          /     option 4
+          / .form-group.col-md-6.col-sm-12.col-xs-12
+          /   .field-label
+          /     | Pickup Locations
+          /     span.req *
+          /   .field-inner
+          /     input#field-four name="field-name" placeholder=("Select the Location") type="text" value="" /
+          /     label.input-icon for="field-three" 
+          /       span.fa.fa-map-marker
+          / .form-group.col-md-6.col-sm-12.col-xs-12
+          /   .field-label
+          /     | Destinations
+          /     span.req *
+          /   select name="destination" 
+          /     option Destination
+          /     option Location One
+          /     option Location Two
+          /     option Location Three
+          /     option Location Four
+          .form-group.col-md-12.col-sm-12.col-xs-12
+            .check-box
+              input#cbox-one type="checkbox" /
+              label for="cbox-one" 
+                span.icon
+                  span.square
+                  span.fa.fa-check
+                | upload your cab?
+          .form-group.col-md-12.col-sm-12.col-xs-12      
+            .btn-outer
+              =f.submit 'Register Cab',class:"theme-btn btn-style-four"
