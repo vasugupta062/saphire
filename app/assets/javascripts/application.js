@@ -14,6 +14,64 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-																																							 
 //= require_tree .
 //= require_self
+//= require theme/owl																																							 
+
+
+$("#slider > .slide:gt(0)").fadeOut(3000);
+
+setInterval(function(){
+	$('#slider> .slide:first')
+	.fadeIn(3000)
+	.next()
+	.fadeOut(3000)
+	.end()
+	.appendTo('#slider');
+},3000);
+
+
+
+$('.owl-carousel').owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
+
+$(document).on('change','#cab_make_id',function () {
+    var id = $(this).find(':selected')[0].value;
+    console.log(id);
+    //alert(id); 
+    $.ajax({
+        type: 'POST',
+        url: '../include/continent.php',
+        data: {
+            'id': id
+        },
+        success: function (data) {
+            // the next thing you want to do 
+            var $country = $('#country');
+            $country.empty();
+            $('#city').empty();
+            for (var i = 0; i < data.length; i++) {
+                $country.append('<option id=' + data[i].sysid + ' value=' + data[i].name + '>' + data[i].name + '</option>');
+            }
+
+            //manually trigger a change event for the contry so that the change handler will get triggered
+            $country.change();
+        }
+    });
+
+});
